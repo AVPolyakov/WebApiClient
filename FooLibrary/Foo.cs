@@ -11,11 +11,11 @@ namespace FooLibrary
             return Task.FromResult(new GetListResponse {
                 Items = new List<Item> {
                     new Item {
-                        Title = "Title1",
+                        Title = $"{request.SearchText}1",
                         Date = DateTime.Now
                     },
                     new Item {
-                        Title = "Title2",
+                        Title = $"{request.SearchText}2",
                         Date = DateTime.Now
                     },
                 }
@@ -26,7 +26,7 @@ namespace FooLibrary
         {
             return Task.FromResult(new GetByIdResponse {
                 Item = new Item {
-                    Title = "Title1",
+                    Title = $"Title{id}",
                     Date = DateTime.Now
                 }
             });
